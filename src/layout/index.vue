@@ -1,25 +1,25 @@
 <template>
-  <div>
+  <el-container>
+    <el-header>
+      <Header />
+    </el-header>
     <el-container>
-      <el-header>
-        <Header />
-      </el-header>
-      <el-container>
-        <el-aside :width="isCollapse ? '64px' : '250px'">
-          <Aside />
-        </el-aside>
-        <el-main>
-          <Main />
-        </el-main>
-      </el-container>
+      <el-aside :width="isCollapse ? '64px' : '250px'">
+        <Aside />
+      </el-aside>
+      <el-main>
+        <TagsView></TagsView>
+        <Main style="margin-top: 30px" />
+      </el-main>
     </el-container>
-  </div>
+  </el-container>
 </template>
 
 <script setup>
 import Header from './Header'
 import Aside from './Aside'
 import Main from './Main'
+import TagsView from '../components/TagsView.vue'
 import { useStore } from 'vuex'
 import { computed } from 'vue'
 const store = useStore()
