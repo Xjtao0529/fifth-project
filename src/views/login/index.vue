@@ -77,9 +77,7 @@ const handleLogin = async () => {
       Notification('登录成功', '', 'success')
       router.push('/')
     }
-  } catch (e) {
-    console.log(e, 'login')
-  }
+  } catch (error) {}
   loading.value = false
 }
 </script>

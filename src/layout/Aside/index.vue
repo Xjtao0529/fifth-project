@@ -12,7 +12,7 @@
 <script setup>
 import MenuTree from './MenuTree.vue'
 import { useStore } from 'vuex'
-import { filterMenus } from '@/utils/filterMenus'
+import { filterMenus } from '../../utils/filterMenus'
 import { computed } from 'vue'
 
 const store = useStore()

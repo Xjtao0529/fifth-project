@@ -11,7 +11,7 @@ export const getItem = (key) => {
   const data = storage.getItem(key)
   try {
     return JSON.parse(data)
-  } catch (e) {
+  } catch (error) {
     return data
   }
 }

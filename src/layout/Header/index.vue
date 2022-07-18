@@ -55,7 +55,7 @@
             placeholder="请输入旧密码"
           />
         </el-form-item>
-        <el-form-item label="确认密码" prop="newPassword">
+        <el-form-item label="新密码" prop="newPassword">
           <el-input
             v-model="editPasswordFormModel.newPassword"
             placeholder="请输入新密码"
@@ -88,8 +88,6 @@ import { useStore } from 'vuex'
 import screenfull from 'screenfull'
 import { ref, nextTick, computed, reactive } from 'vue'
 import { Notification } from '@/utils/Notification'
-import { useRouter } from 'vue-router'
-const router = useRouter()
 const store = useStore()
 // 验证规则
 const rules = {
@@ -145,16 +143,13 @@ const handleCommand = (command) => {
       break
   }
 }
-// 修改密码
 const editPwd = () => {
   drawer.value = true
 }
-// 退出登录
 const logout = async () => {
   try {
     await confirm('是否要退出登录？', '', 'warning', '确定', '取消')
     store.dispatch('user/userLogout')
-    router.push('/login')
   } catch (e) {}
 }
 // 全屏切换
@@ -168,7 +163,6 @@ const changeFullScreen = () => {
 const refresh = () => {
   window.location.reload()
 }
-// 修改密码
 const handleSubmit = async () => {
   try {
     await formRef.value.validate()
@@ -178,16 +172,13 @@ const handleSubmit = async () => {
     console.log(e)
   }
 }
-// 用户信息
 const userInfo = computed(() => {
   const { username } = store.getters.userInfo
   return {
     username,
-    avatar:
-      'https://portrait.gitee.com/uploads/avatars/user/3659/10978559_suyuan_0_1652861325.png'
+    avatar: 'https://avatars.githubusercontent.com/u/107660054?s=40&v=4'
   }
 })
-// 菜单伸缩
 const changeIsCollapse = () => {
   store.commit('menu/changeIsCollapse')
 }
