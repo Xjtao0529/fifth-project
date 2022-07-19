@@ -24,7 +24,7 @@
     <!-- 第二行 -->
     <el-row :gutter="20" style="margin: 20px 0">
       <el-col v-for="(item, index) in List" :key="index" :span="3">
-        <el-card shadow="hover" @canplay="toViews(item.path)">
+        <el-card shadow="hover" @click="toViews(item.path)">
           <div class="two-flex">
             <el-icon>
               <component :is="item.icon" :color="item.color"></component>
@@ -61,8 +61,53 @@
           <div id="echarts"></div>
         </el-card>
       </el-col>
-      <el-col :span="12">
-        <el-card> </el-card>
+      <el-col :span="12" class="right">
+        <el-card>
+          <template #header>
+            <div class="right-top">
+              <span>店铺及商品提示</span>
+              <el-tag class="ml-2" effect="plain" type="danger"
+                >店铺及商品提示</el-tag
+              >
+            </div>
+          </template>
+          <el-row :gutter="20">
+            <el-col v-for="(item, index) in goodsList" :key="index" :span="6">
+              <el-card
+                shadow="hover"
+                style="background-color: #f6f6f6; font-size: 14px"
+              >
+                <div class="right-botton">
+                  <span> {{ item.label }} </span>
+                  <span style="margin-top: 10px"> {{ item.value }} </span>
+                </div>
+              </el-card>
+            </el-col>
+          </el-row>
+        </el-card>
+        <el-card style="margin-top: 20px">
+          <template #header>
+            <div class="right-top">
+              <span>交易提示</span>
+              <el-tag class="ml-2" effect="plain" type="danger"
+                >需要立即处理的交易订单
+              </el-tag>
+            </div>
+          </template>
+          <el-row :gutter="20">
+            <el-col v-for="(item, index) in orderList" :key="index" :span="6">
+              <el-card
+                shadow="hover"
+                style="background-color: #f6f6f6; font-size: 14px"
+              >
+                <div class="right-botton">
+                  <span> {{ item.label }} </span>
+                  <span style="margin-top: 10px"> {{ item.value }} </span>
+                </div>
+              </el-card>
+            </el-col>
+          </el-row>
+        </el-card>
       </el-col>
     </el-row>
 
@@ -181,7 +226,18 @@ const generateEcharts = (x, y) => {
     }
   }
 }
-
+.right {
+  .right-top {
+    display: flex;
+    justify-content: space-between;
+  }
+  .right-botton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
 #echarts {
   height: 300px;
   width: 600px;
