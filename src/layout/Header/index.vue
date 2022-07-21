@@ -4,20 +4,17 @@
       <el-icon><Eleme /></el-icon>
       积云编程
     </span>
-    <!--    左侧菜单伸缩-->
     <div class="icon-button">
       <el-icon @click="changeIsCollapse">
         <Fold />
       </el-icon>
     </div>
-    <!--    刷新-->
     <el-tooltip content="刷新" placement="bottom">
       <el-icon class="box-item" @click="refresh">
         <Refresh />
       </el-icon>
     </el-tooltip>
     <div>
-      <!--      全屏-->
       <div class="right-container">
         <el-tooltip :content="screenfullTltle" placement="bottom">
           <el-icon class="box-item" @click="changeFullScreen">
@@ -25,7 +22,6 @@
             <Aim v-else />
           </el-icon>
         </el-tooltip>
-        <!--        下拉-->
         <el-dropdown trigger="click" @command="handleCommand">
           <span class="el-dropdown-link">
             <el-avatar :size="30" :src="userInfo.avatar"></el-avatar>
@@ -41,7 +37,6 @@
         </el-dropdown>
       </div>
     </div>
-    <!--    修改密码抽屉-->
     <el-drawer v-model="drawer" title="修改密码">
       <el-form
         ref="formRef"

@@ -112,6 +112,7 @@
     </el-row>
 
     <!-- </el-skeleton> -->
+    <div style="height: 100px"></div>
   </div>
 </template>
 
@@ -240,6 +241,6 @@ const generateEcharts = (x, y) => {
 }
 #echarts {
   height: 300px;
-  width: 600px;
+  width: 500px;
 }
 </style>
