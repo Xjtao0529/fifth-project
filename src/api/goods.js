@@ -19,3 +19,10 @@ export const getCateList = () => {
     method: 'GET'
   })
 }
+
+export const getSkusList = (current) => {
+  return request({
+    url: `/skus/${current}`,
+    method: 'get'
+  })
+}
