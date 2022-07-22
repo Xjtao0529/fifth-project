@@ -180,6 +180,9 @@ const getGoodsList = async () => {
   console.log(list, totalCount, cates, 'res')
   options.value = cates
 }
+const serach = () => {
+  getGoodsList()
+}
 getGoodsList()
 const handleClick = ({ props: { name } }) => {
   console.log(name)

@@ -12,3 +12,10 @@ export const goodsListAPI = (current, data) => {
     data: query
   })
 }
+
+export const getCateList = () => {
+  return request({
+    url: '/category',
+    method: 'GET'
+  })
+}

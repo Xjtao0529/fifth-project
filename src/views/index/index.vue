@@ -73,13 +73,14 @@
           </template>
           <el-row :gutter="20">
             <el-col v-for="(item, index) in goodsList" :key="index" :span="6">
-              <el-card
-                shadow="hover"
-                style="background-color: #f6f6f6; font-size: 14px"
-              >
+              <el-card shadow="hover" style="background-color: #f6f6f6">
                 <div class="right-botton">
-                  <span> {{ item.label }} </span>
-                  <span style="margin-top: 10px"> {{ item.value }} </span>
+                  <span style="font-size: 24px">
+                    {{ item.value }}
+                  </span>
+                  <span style="margin-top: 10px; font-size: 12px">
+                    {{ item.label }}
+                  </span>
                 </div>
               </el-card>
             </el-col>
@@ -101,8 +102,10 @@
                 style="background-color: #f6f6f6; font-size: 14px"
               >
                 <div class="right-botton">
-                  <span> {{ item.label }} </span>
-                  <span style="margin-top: 10px"> {{ item.value }} </span>
+                  <span style="font-size: 24px"> {{ item.value }} </span>
+                  <span style="margin-top: 10px; font-size: 12px">
+                    {{ item.label }}
+                  </span>
                 </div>
               </el-card>
             </el-col>
@@ -232,7 +235,9 @@ const generateEcharts = (x, y) => {
     display: flex;
     justify-content: space-between;
   }
+
   .right-botton {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -240,7 +245,7 @@ const generateEcharts = (x, y) => {
   }
 }
 #echarts {
-  height: 320px;
+  height: 310px;
   width: 500px;
 }
 </style>

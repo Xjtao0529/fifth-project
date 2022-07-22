@@ -7,7 +7,7 @@
         :prop="item.prop"
         :label="item.label"
         :width="item.width"
-        :algin="item.algin"
+        :align="item.align"
         :type="item.type"
       >
         <template v-if="item.slot" v-slot="{ row, $index, column }">
