@@ -31,6 +31,7 @@ export default [
   {
     label: '操作',
     slot: 'active',
-    align: 'center'
+    align: 'center',
+    width: 350
   }
 ]

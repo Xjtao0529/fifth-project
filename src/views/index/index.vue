@@ -240,7 +240,7 @@ const generateEcharts = (x, y) => {
   }
 }
 #echarts {
-  height: 300px;
+  height: 320px;
   width: 500px;
 }
 </style>

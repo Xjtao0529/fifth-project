@@ -2,11 +2,11 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import 'element-plus/dist/index.css'
-
 import './styles/index.css'
 import ElementPlus from 'element-plus'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import 'element-plus/dist/index.css'
+
 import './permission'
 import Fragment from 'vue-fragment'
 const app = createApp(App)
